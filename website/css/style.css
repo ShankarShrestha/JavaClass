@@ -1,0 +1,261 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 8, 2017, 4:08:35 PM
+    Author     : Shankar Shrestha
+*/
+/*************Generic Class***********/
+.container {
+    width: 1124px;
+    margin: 0 auto;
+}
+
+/********Logo CSS********************/
+.logo {
+  background: #99bbff;
+  font: 74px 'Arial Narrow', sans-serif;/* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
+  color: #fefefe;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+
+/* stuff for both words */
+.logo span {
+  position: relative;
+}
+.logo span:before,
+.logo span:after {
+  content: '';
+  position: absolute;
+  border-width: 32px;/* makes a nice, big 64px square */
+  border-style: solid;
+  border-color: transparent;
+  height: 0;
+  z-index: 10;
+}
+
+/* stuff for 1st word */
+.logo .word1 {
+  color: #dc006c;
+  margin-right: -38px;
+  transform: rotateY(180deg);/* using Prefix free */
+  display: inline-block;/* required for transform */
+  z-index: 10;/* stack 1st word on top */
+}
+.logo .word1:before {
+  right: -4px;/* would be left, but we flipped the word */
+  top: -9px;
+  border-top-color: #99bbff;/* match background color */
+  border-right-color: #99bbff;/* would be left, but we flipped the word */
+}
+.logo .word1:after {
+  left: 15px;/* would be right, but we flipped the word */
+  bottom: -15px;
+  border-bottom-color: #99bbff;
+  border-left-color: #99bbff;/* would be right, but we flipped the word */
+}
+
+/* stuff for 2nd word */
+.logo .word2 {
+  z-index: 0;/* stack 2nd word below */
+}
+.logo .word2:before {
+  left: -4px;
+  top: -6px;
+  border-top-color: #99bbff;
+  border-left-color: #99bbff;
+}
+.logo .word2:after {
+  right: -4px;  
+  bottom: 4px;
+  border-bottom-color: #99bbff;
+  border-right-color: #99bbff;
+}
+
+
+
+
+/********Specefic class**********/
+body{
+    margin: 0;
+    padding: 0;
+}
+.logoDiv {
+    top: 50%;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.topHeader {
+    background-color: #99bbff;
+    height: 110px;
+    position: relative;
+}
+
+.heroArea{
+    background-image: url("../image/1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(40%);
+    
+}
+/*.heroImage {
+    background-image: url("../image/1.jpeg");
+    background-repeat: no-repeat;
+}*/
+
+.name {
+    height: 500px;
+    position:relative;
+}
+.intro {
+    color: #dc006c;
+    font-family: 'Anton', sans-serif;
+    font-size: 46px;
+}
+.tagLine {
+    position: absolute;
+    margin: 250px 0 0 0;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 46px;
+    color: #fff;
+}
+.content {
+    margin: 350px 0 0 20px;
+    padding:10px;
+    position: absolute;
+    height: 100px;
+    width: 700px;
+    background-color: red;
+    opacity: 0.5;
+}
+
+/*banner text rotation*/
+.slidingVertical{
+	display: inline;
+	text-indent: 8px;
+}
+.slidingVertical span{
+	animation: topToBottom 12.5s linear infinite 0s;
+	-ms-animation: topToBottom 12.5s linear infinite 0s;
+	-webkit-animation: topToBottom 12.5s linear infinite 0s;
+	color: #dc006c;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.slidingVertical span:nth-child(2){
+	animation-delay: 7s;
+	-ms-animation-delay: 7s;
+	-webkit-animation-delay: 7s;
+}
+.slidingVertical span:nth-child(3){
+	animation-delay: 12.5s;
+	-ms-animation-delay: 12.5s;
+	-webkit-animation-delay: 12.5s;
+}
+
+@-webkit-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(-50px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+
+/*General start*/
+
+.message {
+  background-color: #cce6ff;
+}
+
+.innerMessage {
+  text-align: center;
+  padding: 30px 0;
+  
+}
+
+.tagHireMe {
+  font-family: 'Arbutus Slab', serif;
+  color: #fff;
+  font-size: 46px;
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.cardIntro {
+  background-color: #e6f3ff;
+  height: 400px;
+}
+
+
+/*USeless*/
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
